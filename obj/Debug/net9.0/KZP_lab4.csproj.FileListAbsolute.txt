@@ -1,0 +1,14 @@
+C:\Users\Sviat\source\repos\KZP_lab4\KZP_lab4\bin\Debug\net9.0\KZP_lab4.exe
+C:\Users\Sviat\source\repos\KZP_lab4\KZP_lab4\bin\Debug\net9.0\KZP_lab4.deps.json
+C:\Users\Sviat\source\repos\KZP_lab4\KZP_lab4\bin\Debug\net9.0\KZP_lab4.runtimeconfig.json
+C:\Users\Sviat\source\repos\KZP_lab4\KZP_lab4\bin\Debug\net9.0\KZP_lab4.dll
+C:\Users\Sviat\source\repos\KZP_lab4\KZP_lab4\bin\Debug\net9.0\KZP_lab4.pdb
+C:\Users\Sviat\source\repos\KZP_lab4\KZP_lab4\obj\Debug\net9.0\KZP_lab4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sviat\source\repos\KZP_lab4\KZP_lab4\obj\Debug\net9.0\KZP_lab4.AssemblyInfoInputs.cache
+C:\Users\Sviat\source\repos\KZP_lab4\KZP_lab4\obj\Debug\net9.0\KZP_lab4.AssemblyInfo.cs
+C:\Users\Sviat\source\repos\KZP_lab4\KZP_lab4\obj\Debug\net9.0\KZP_lab4.csproj.CoreCompileInputs.cache
+C:\Users\Sviat\source\repos\KZP_lab4\KZP_lab4\obj\Debug\net9.0\KZP_lab4.dll
+C:\Users\Sviat\source\repos\KZP_lab4\KZP_lab4\obj\Debug\net9.0\refint\KZP_lab4.dll
+C:\Users\Sviat\source\repos\KZP_lab4\KZP_lab4\obj\Debug\net9.0\KZP_lab4.pdb
+C:\Users\Sviat\source\repos\KZP_lab4\KZP_lab4\obj\Debug\net9.0\KZP_lab4.genruntimeconfig.cache
+C:\Users\Sviat\source\repos\KZP_lab4\KZP_lab4\obj\Debug\net9.0\ref\KZP_lab4.dll
