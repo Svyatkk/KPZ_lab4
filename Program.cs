@@ -2,7 +2,7 @@
 using Lab4.Task2_Mediator;
 using Lab4.Task5_Memento;
 using Lab4.Task1_ChainOfResponsibility;
-
+using Lab4.Task3_Observer;
 namespace Lab4
 {
     
@@ -33,6 +33,7 @@ namespace Lab4
                 {
                     case "1": DemoTask1(); break;
                     case "2": DemoTask2(); break;
+                    case "3": DemoTask3(); break;
                     case "5": DemoTask5(); break;
                     case "0": running = false; break;
                     default:  Console.WriteLine("Невірний вибір."); break;
@@ -76,7 +77,51 @@ namespace Lab4
             Console.WriteLine("\n--- Смуга R-02 звільнилась ---");
             runway2.Release();
         }
-        
+      
+        static void DemoTask3()
+        {
+            Console.WriteLine("  ЗАВДАННЯ 3: Спостерігач — LightHTML EventListener");
+
+            var div = new LightElement("div");
+            var button = new LightElement("button", isBlock: false);
+            button.AddChild(new LightText("Натисни мене"));
+            div.AddChild(button);
+
+            var h1 = new LightElement("h1", isBlock: false);
+            h1.AddChild(new LightText("Заголовок сторінки"));
+
+            Task3_Observer.EventHandler clickHandler1 = (evt, el) =>
+                Console.WriteLine($" Handler 1 Клік на <{el.TagName}>! Подія: {evt}");
+
+            Task3_Observer.EventHandler clickHandler2 = (evt, el) =>
+                Console.WriteLine($" [Handler 2] Ще один обробник кліку на <{el.TagName}>!");
+
+            Task3_Observer.EventHandler mouseoverHandler = (evt, el) =>
+                Console.WriteLine($" [Handler] Миша над <{el.TagName}>! Подія: {evt}");
+
+            Task3_Observer.EventHandler focusHandler = (evt, el) =>
+                Console.WriteLine($" [Handler] Фокус на <{el.TagName}>!");
+
+            button.AddEventListener("click", clickHandler1);
+            button.AddEventListener("click", clickHandler2);
+            button.AddEventListener("mouseover", mouseoverHandler);
+            h1.AddEventListener("focus", focusHandler);
+
+            Console.WriteLine("\n--- Симулюємо події ---");
+            button.DispatchEvent("click");
+            button.DispatchEvent("mouseover");
+            button.DispatchEvent("keydown");  
+
+            h1.DispatchEvent("focus");
+
+            Console.WriteLine("\n--- Видаляємо один обробник click ---");
+            button.RemoveEventListener("click", clickHandler1);
+            button.DispatchEvent("click");     
+
+            Console.WriteLine("\n--- HTML-структура ---");
+            Console.WriteLine(div.OuterHtml());
+            Console.WriteLine(h1.OuterHtml());
+        }
         static void DemoTask5()
         {
             Console.WriteLine("  ЗАВДАННЯ 5: Мементо — Текстовий редактор");
