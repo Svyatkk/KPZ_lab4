@@ -2,7 +2,7 @@
 using Lab4.Task2_Mediator;
 using Lab4.Task5_Memento;
 using Lab4.Task1_ChainOfResponsibility;
-
+using Lab4.Task4_Strategy;
 namespace Lab4
 {
     
@@ -33,6 +33,7 @@ namespace Lab4
                 {
                     case "1": DemoTask1(); break;
                     case "2": DemoTask2(); break;
+                    case "4": DemoTask4(); break;
                     case "5": DemoTask5(); break;
                     case "0": running = false; break;
                     default:  Console.WriteLine("Невірний вибір."); break;
@@ -76,7 +77,27 @@ namespace Lab4
             Console.WriteLine("\n--- Смуга R-02 звільнилась ---");
             runway2.Release();
         }
-        
+        static void DemoTask4()
+        {
+            Console.WriteLine("  ЗАВДАННЯ 4: Стратегія — LightImage");
+
+            Console.WriteLine("--- Зображення з файлової системи ---");
+            var localImg = new LightImage("./assets/photo.png", alt: "Локальне фото");
+            Console.WriteLine(localImg.OuterHtml());
+
+            Console.WriteLine("\n--- Зображення з мережі (http) ---");
+            var httpImg = new LightImage("http://example.com/image.jpg", alt: "HTTP-зображення");
+            Console.WriteLine(httpImg.OuterHtml());
+
+            Console.WriteLine("\n--- Зображення з мережі (https) ---");
+            var httpsImg = new LightImage("https://cdn.example.com/logo.png", alt: "HTTPS-логотип");
+            Console.WriteLine(httpsImg.OuterHtml());
+
+            Console.WriteLine("\n--- Повторне завантаження (кеш) ---");
+            Console.WriteLine("Виклик LoadImage() вдруге — не повинен повторно викликати стратегію:");
+            string cached = localImg.LoadImage();
+            Console.WriteLine($"Отримано: {cached}");
+        }
         static void DemoTask5()
         {
             Console.WriteLine("  ЗАВДАННЯ 5: Мементо — Текстовий редактор");
